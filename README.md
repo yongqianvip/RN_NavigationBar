@@ -8,6 +8,7 @@ common navigationBar for react-native
 - image
 
 		<NavigatorBar
+			navigator={ this.props.navigator }
 			title:'LeftImageButton'
 			leftButtonConfig={{
 				type: 'image',
@@ -21,6 +22,7 @@ common navigationBar for react-native
 - font
 	
 		<NavigatorBar
+			navigator={ this.props.navigator }
 			title:'LeftFontButton'
 			leftIconFont='&#xe617;'
 			leftButtonConfig={{
@@ -35,6 +37,7 @@ common navigationBar for react-native
 - string
 
 		<NavigatorBar
+			navigator={ this.props.navigator }
 			title:'LeftStringButton'
 			leftButtonConfig={{
 	 			type: 'string',
@@ -48,6 +51,7 @@ common navigationBar for react-native
 
 ### 右侧按钮最多可以设置两个 rightButton 和 rightSubButton		 	
 	<NavigatorBar
+		navigator={ this.props.navigator }
 		title:'Right&&RightSubButton'
 		rightIconFont= '&#xe617;'
 		rightButtonConfig={{
