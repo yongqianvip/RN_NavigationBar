@@ -24,7 +24,7 @@ export default class NavigatorBar extends React.Component {
 		if (this.props.backIconClick) {
 			this.props.backIconClick();
 		} else {
-			if (this.props.navigator && !this.props.hiddenBackIcon) this.props.navigator.pop();
+			if (this.props.navigator && !this.props.leftButtonHidden) this.props.navigator.pop();
 		}
 	}
 	static defaultProps = {
@@ -32,9 +32,23 @@ export default class NavigatorBar extends React.Component {
 			type: 'image',
 			image: backIcon,
 			onClick: ()=>{
-				Alert.alert('default backIcon on click','222222',[{text:'ok',onPress:()=>console.log("124356")}]);
+				this._goback;
 			}
 		}
+	}
+
+	static propTypes = {
+		title: React.PropTypes.string,
+		centerIconStyle: Text.propTypes.style,
+		leftButtonHidden: React.PropTypes.bool,
+		backIconClick: React.PropTypes.func,
+		leftButtonConfig: React.PropTypes.boject,
+		rightButtonConfig: React.PropTypes.boject,
+		rightSubButtonConfig: React.PropTypes.boject,
+		style: View.propTypes.style,
+		leftIconFont: React.PropTypes.string,
+		rightIconFont: React.PropTypes.string,
+		rightSubIconFont: React.PropTypes.string
 	}
 
 	render() {
@@ -42,19 +56,14 @@ export default class NavigatorBar extends React.Component {
 			title,
 			centerIcon,
 			centerIconStyle,
-
 			leftButtonHidden,
-
 			leftButtonConfig,
 			leftIconFont,
-
 			rightButtonConfig,
 			rightIconFont,
 			rightSubButtonConfig,
 			rightSubIconFont,
-
 			style,
-
 		} = this.props;
 
 		return (
@@ -187,16 +196,6 @@ export default class NavigatorBar extends React.Component {
 	}
 }
 
-const propTypes = {
-  centerIconStyle: Text.propTypes.style,
-
-  title: React.PropTypes.string,
-  hiddenBackIcon: React.PropTypes.bool,
-  rightClick: React.PropTypes.func,
-  backIconClick: React.PropTypes.func,
-}
-
-NavigatorBar.propTypes = propTypes;
 
 const styles = StyleSheet.create({
 	container: {
@@ -274,17 +273,5 @@ const styles = StyleSheet.create({
 	},
 	centerImg: {
 		alignSelf: 'center',
-	},
-	unreading: {
-		backgroundColor: 'red',
-		borderRadius:6,
-		width:12,
-		height: 12,
-		top: 10,
-		right: 10,
-		position: 'absolute'
-	},
-	iconFont: {
-		fontFamily: 'iconfont',
-	},
+	}
 });
