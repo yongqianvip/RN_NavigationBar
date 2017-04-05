@@ -48,13 +48,13 @@ common navigationBar for react-native
 			disable: true,
 			disableColor: 'red',
 			onClick: ()=>{
-				Alert.alert('right font 按钮','text button clicked',[{text: 'ok',onPress:()=>{console.log("----image button cilcked")}}])
+				
 			}
 		}}
 		rightSubIconFont= '&#xe617;'
 		rightSubButtonConfig={{
 			type: 'font',
 			onClick: ()=>{
-				Alert.alert('right sub 按钮','text button clicked',[{text: 'ok',onPress:()=>{console.log("----image button cilcked")}}])
+
 			}
 		}}
