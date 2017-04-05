@@ -7,40 +7,48 @@ common navigationBar for react-native
 
 - image
 
-		leftButtonConfig={{
-			type: 'image',
-			image: signForImg,
-			imageStyle:{width: 20,height:20},
-			onClick: ()=>{
-	
-			}
-		}}
+		<NavigatorBar
+			title:'LeftImageButton'
+			leftButtonConfig={{
+				type: 'image',
+				image: signForImg,
+				imageStyle:{width: 20,height:20},
+				onClick: ()=>{
+				
+				}
+			}}/>
 		
 - font
-
-		leftIconFont='&#xe617;'
-		leftButtonConfig={{
-			type: 'font',
-			disable: true,
-			disableColor: 'red',
-			onClick: ()=>{
-				
-			}
-		}}
+	
+		<NavigatorBar
+			title:'LeftFontButton'
+			leftIconFont='&#xe617;'
+			leftButtonConfig={{
+				type: 'font',
+				disable: true,
+				disableColor: 'red',
+				onClick: ()=>{
+					
+				}
+			}}/>
 	
 - string
 
-		leftButtonConfig={{
- 			type: 'string',
-	 		disable: false,
-	 		title: '编辑订单',
-	 		onClick: ()=>{
-	 			
-	 		}
-	 	}}
-		 	
-- rightButton && rightSubButton
-	
+		<NavigatorBar
+			title:'LeftStringButton'
+			leftButtonConfig={{
+	 			type: 'string',
+		 		disable: false,
+		 		title: '编辑订单',
+		 		onClick: ()=>{
+		 			
+		 		}
+		 	}}/>
+
+
+### 右侧按钮最多可以设置两个 rightButton 和 rightSubButton		 	
+	<NavigatorBar
+		title:'Right&&RightSubButton'
 		rightIconFont= '&#xe617;'
 		rightButtonConfig={{
 			type: 'font',
@@ -55,6 +63,6 @@ common navigationBar for react-native
 		rightSubButtonConfig={{
 			type: 'font',
 			onClick: ()=>{
-
+	
 			}
 		}}
